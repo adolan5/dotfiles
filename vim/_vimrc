@@ -64,4 +64,5 @@ autocmd FileType java setlocal shiftwidth=2 tabstop=2 expandtab
 set number
 highlight LineNr guifg=#adadad
 set nowrap
-
+" Always use unix-style formatting
+set ff=unix
