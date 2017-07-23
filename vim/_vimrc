@@ -51,12 +51,16 @@ function! StripTrailingWhitespaces()
 endfunction
 map <leader>w :call StripTrailingWhitespaces()<cr>
 
+" Font settings
 set guifont=Courier\ New:h11
+" Don't create messy extra files
 set nobackup
 set noundofile
 set noswapfile
+" File-type specific settings
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType java setlocal shiftwidth=2 tabstop=2 expandtab
 set number
 highlight LineNr guifg=#adadad
 set nowrap
