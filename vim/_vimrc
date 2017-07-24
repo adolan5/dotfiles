@@ -51,6 +51,9 @@ function! StripTrailingWhitespaces()
 endfunction
 map <leader>w :call StripTrailingWhitespaces()<cr>
 
+" Faster tab switching
+map <leader>f :tabnext<cr>
+
 " Font settings
 set guifont=Courier\ New:h11
 " Don't create messy extra files
@@ -61,8 +64,10 @@ set noswapfile
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType java setlocal shiftwidth=2 tabstop=2 expandtab
+" Show line numbers
 set number
 highlight LineNr guifg=#adadad
+" Don't have lines wrap (looks v messy)
 set nowrap
 " Always use unix-style formatting
-set ff=unix
+set ffs=unix
