@@ -45,4 +45,4 @@ set nowrap
 " Always use unix-style formatting
 set ffs=unix
 " Map to quickly open the current directory in a vspit
-map <leader>c :vsplit<cr> <bar> :Ex<cr>
+map <leader>c :vsplit <bar> :Ex<cr>
