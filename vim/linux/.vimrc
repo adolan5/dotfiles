@@ -17,6 +17,9 @@ function! StripTrailingWhitespaces()
 endfunction
 map <leader>w :call StripTrailingWhitespaces()<cr>
 
+" Faster tab opening, opens pwd
+map <leader>e :tabe %:h<cr>
+
 " Faster tab switching
 map <leader>f :tabnext<cr>
 
