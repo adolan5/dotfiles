@@ -36,10 +36,12 @@ set noswapfile
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType java setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType sql setlocal shiftwidth=4 tabstop=4 expandtab
 
 " Smart indentation!
 set autoindent
 filetype indent on
+
 " Show line numbers
 set number
 highlight LineNr guifg=#adadad ctermfg=gray
