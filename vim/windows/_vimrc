@@ -79,3 +79,5 @@ set nowrap
 set ffs=unix
 " Map to quickly open the current directory in a vspit
 map <leader>c :vsplit <bar> :Ex<cr>
+" Map to set the current vsplit to be a lil' fatter
+map <leader>v :vertical resize 150<cr>
