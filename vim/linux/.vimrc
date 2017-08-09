@@ -22,6 +22,7 @@ map <leader>e :tabe %:h<cr>
 
 " Faster tab switching
 map <leader>f :tabnext<cr>
+map <leader>a :tabprevious<cr>
 
 " Set highlight search
 set hlsearch
@@ -55,3 +56,7 @@ set ffs=unix
 map <leader>c :vsplit <bar> :Ex<cr>
 " Map to set the current vsplit to be a lil' fatter
 map <leader>v :vertical resize 150<cr>
+" vsplit mappings
+map <leader>s <c-w>h
+map <leader>d <c-w>l
+map <leader>b <c-w>=
