@@ -90,3 +90,6 @@ map <leader>v :vertical resize 150<cr>
 map <leader>s <c-w>h
 map <leader>d <c-w>l
 map <leader>b <c-w>=
+
+" use ctrlp fuzzy search
+set runtimepath^=$HOME/vimfiles/bundle/ctrlp.vim
