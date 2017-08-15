@@ -42,6 +42,7 @@ autocmd FileType sh setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType css setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType scss setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType less setlocal shiftwidth=2 tabstop=2 expandtab
 
 " Smart indentation!
 set autoindent
