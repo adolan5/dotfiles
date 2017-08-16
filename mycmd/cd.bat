@@ -3,22 +3,14 @@ rem Behaves more like linux 'cd'
 
 rem collect argument (if there is one)
 if .%1==. goto none
-if exist %1\* (
-	goto change
-) else (
-	goto baddir
-)
-
-:none
-cd %USERPROFILE%
-goto end
-
-:baddir
-if not .%1==. echo '%1' is not a valid directory
-goto end
 
 :change
-rem (ber) TODO this part!
+cd %1
+goto end
+
+rem if there was no argument, cd into the user's home dir
+:none
+cd %USERPROFILE%
 goto end
 
 :end
