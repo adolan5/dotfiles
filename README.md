@@ -37,7 +37,7 @@ your path, just the directory that you put myCMD in.
 5. Configure startup.bat for your environment (set aliases, set installation directories, etc.)
 
 ### Configuring your startup.bat
-startup.bat currently has the default installation locaiton for notepad++
+startup.bat currently has the default installation location for notepad++
 set. This variable is used by the npp.bat script in launching notepad++.
 If you don't use npp, feel free to delete the npp.bat script and remove
 the variable from startup.  
