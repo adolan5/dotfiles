@@ -3,7 +3,7 @@ rem -- Run notepad++ --
 rem Much better alternative to adding it to your PATH, don't you think?
 rem Inspired in part by the scripts used for gvim
 
-rem Check if you've set your executable location
+rem Check if you've set your executable location in your startup.bat
 if "%NPP_EXE_DIR%"== "" (
 	echo "NPP_EXE_DIR not set! Do you need to add it to your startup.bat?"
 	goto eof
