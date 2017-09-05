@@ -69,3 +69,5 @@ map <leader>b <c-w>=
 
 " use ctrlp fuzzy search
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+" have ctrlp only root in pwd
+let g:ctrlp_working_path_mode = 0
