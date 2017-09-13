@@ -8,7 +8,7 @@ if "%GIMP_EXE_DIR%"== "" (
 )
 
 if exist "%GIMP_EXE_DIR%\gimp-2.8.exe" goto havegimp
-echo "%GIMP_EXE_DIR%\gimp-2.8.exe not found!"
+echo "%GIMP_EXE_DIR%\gimp-2.8.exe not found^^!"
 goto eof
 
 :havegimp
