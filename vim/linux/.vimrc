@@ -36,7 +36,7 @@ set noswapfile
 " File-type specific settings
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType java setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType java setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType sql setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
