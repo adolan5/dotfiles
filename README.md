@@ -37,10 +37,10 @@ your path, just the directory that you put myCMD in.
 5. Configure startup.bat for your environment (set aliases, set installation directories, etc.)
 
 ### Configuring your startup.bat
-startup.bat currently has the default installation location for notepad++
-set. This variable is used by the npp.bat script in launching notepad++.
-If you don't use npp, feel free to delete the npp.bat script and remove
-the variable from startup.  
+startup.bat currently has the default installation locations for notepad++ and Gimp 2.8
+set. These variables are used by the npp.bat and gimp.bat scripts in launching their respective programs.
+If you don't use these programs, feel free to delete one or both of the scripts and remove
+the variables from your startup.bat.  
 Aliases for commands are generally of the form:  
 `doskey myalias=othercommand`  
 and aliases for launching programs are generally of the form:  
