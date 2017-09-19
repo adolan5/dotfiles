@@ -1,4 +1,9 @@
 @echo off
+
+if exist "keypress.exe" goto loopstart
+echo Missing keypress.exe^! Do you need to download it off of the repository?
+goto eof
+
 rem Outputs a neat little 'about' message
 :loopstart
 cls
