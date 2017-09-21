@@ -71,3 +71,5 @@ map <leader>b <c-w>=
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Map to ctrlp in this dir (better than in root all the time)
 map <leader>t :CtrlP %:h<cr>
+" Disable ctrlp's auto find root
+let g:ctrlp_working_path_mode = 0
