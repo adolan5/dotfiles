@@ -46,6 +46,7 @@ autocmd FileType less setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType cc setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType c setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 expandtab
 
 " Smart indentation!
 set autoindent
