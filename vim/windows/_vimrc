@@ -101,3 +101,6 @@ set runtimepath^=$HOME/vimfiles/bundle/ctrlp.vim
 map <leader>t :CtrlP %:h<cr>
 " Disable ctrlp's auto find root
 let g:ctrlp_working_path_mode = 0
+
+" This map is AMAZING for your pinkies :)
+map <Space> :
