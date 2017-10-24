@@ -33,6 +33,8 @@ set guifont=Courier\ New:h11
 set nobackup
 set noundofile
 set noswapfile
+" General indentation
+set shiftwidth=4 tabstop=4 expandtab
 " File-type specific settings
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 expandtab
