@@ -1,0 +1,14 @@
+# Contains lines of bash that I want to hang on to
+
+# Use vim, dummy
+export EDITOR=vim
+
+# The following lines are used in the Windows 10 Ubuntu Bash shell
+
+# Change screen dir
+export SCREENDIR=$HOME/.screen
+
+# Color fixes
+LS_COLORS=$LS_COLORS:'di=0;96:ow=0;92;104:';
+export LS_COLORS
+PS1='\e[32;1m\u@\e[36m\w\e[0m> '
