@@ -12,3 +12,14 @@ export SCREENDIR=$HOME/.screen
 LS_COLORS=$LS_COLORS:'di=0;96:ow=0;92;104:';
 export LS_COLORS
 PS1='\e[32;1m\u@\e[36m\w\e[0m> '
+
+# h(istory | )ag: Grep your history
+hag() {
+  local GREPPER=ag
+  # which $GREPPER
+  if [ -z $(which $GREPPER) ]
+  then
+    GREPPER="grep --color=auto"
+  fi
+  history | $GREPPER "$1"
+}
