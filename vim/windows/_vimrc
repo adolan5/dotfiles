@@ -108,3 +108,7 @@ let g:ctrlp_custom_ignore = 'node_modules'
 
 " This map is AMAZING for your pinkies :)
 map <Space> :
+
+" Immediately open a DOS file with dos endings (yuck!)
+map <leader>4 :e ++ff=dos<cr>
+
