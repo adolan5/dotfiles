@@ -1,0 +1,10 @@
+# This file contains aliases that I find convenient
+# Place the contents of this file into ~/.bash_aliases
+
+# List screens
+alias sls="screen -list"
+
+# For when I'm going to fast for my own good
+alias sl="ls"
+alias claer="clear"
+alias celar="clear"
