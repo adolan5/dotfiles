@@ -9,3 +9,5 @@
 [alias]
     # List all branches in descending order of modification
     ob = branch -a --sort=-committerdate
+    # Faster status
+    at = status
