@@ -1,11 +1,11 @@
 # Make sure to rename me to '.gitconfig'!
 [user]
-	name = adolan5
-	# email = [ ADD ME ]
+    name = adolan5
+    # email = [ ADD ME ]
 [push]
-	default = simple
+    default = simple
 [core]
-	autocrlf = false
+    autocrlf = false
 [alias]
     # List all branches in descending order of modification
     ob = branch -a --sort=-committerdate
