@@ -9,7 +9,7 @@ export EDITOR=vim
 export SCREENDIR=$HOME/.screen
 
 # Color fixes
-LS_COLORS=$LS_COLORS:'di=0;96:ow=0;92;104:';
+LS_COLORS=$LS_COLORS:'di=0;96:ow=0;96:';
 export LS_COLORS
 PS1='\[\e[32;1m\]\u@\[\e[36m\]\w\[\e[0m\]>'
 
