@@ -77,8 +77,8 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 map <leader>t :CtrlP %:h<cr>
 " Disable ctrlp's auto find root
 let g:ctrlp_working_path_mode = 0
-" Custom ignore for ctrlp (only those pesky node_modules for now)
-let g:ctrlp_custom_ignore = 'node_modules'
+" Custom ignore for ctrlp; node_modules and Java classes
+let g:ctrlp_custom_ignore = 'node_modules\|.*\.class'
 
 " This map is AMAZING for your pinkies :)
 map <Space> :
