@@ -11,3 +11,5 @@
     ob = branch -a --sort=-committerdate
     # Faster status
     at = status
+    # Tig lite (ADOG)
+    tig = log --all --decorate --oneline --graph
