@@ -89,6 +89,9 @@ highlight LineNr guifg=#adadad
 set nowrap
 " Always use unix-style formatting
 set ffs=unix
+" Use smart case for searching
+set ignorecase
+set smartcase
 " Map to quickly open the current directory in a vspit
 map <leader>c :vsplit <bar> :Ex<cr>
 " Map to set the current vsplit to be a lil' fatter
