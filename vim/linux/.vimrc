@@ -38,7 +38,7 @@ set shiftwidth=4 tabstop=4 expandtab
 " File-type specific settings
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType java setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType java setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType sql setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
@@ -48,7 +48,7 @@ autocmd FileType less setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType cc setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType c setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType markdown setlocal tw=80 nonumber
 
 " Smart indentation!
