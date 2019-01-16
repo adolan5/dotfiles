@@ -1,6 +1,6 @@
 # Make sure to rename me to '.gitconfig'!
 [user]
-    name = adolan5
+    name = Andy Dolan
     # email = [ ADD ME ]
 [push]
     default = simple
