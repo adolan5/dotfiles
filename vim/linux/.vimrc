@@ -50,6 +50,7 @@ autocmd FileType c setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType markdown setlocal tw=80 nonumber
+autocmd FileType tex setlocal tw=80 shiftwidth=2 tabstop=4 expandtab
 
 " Smart indentation!
 set autoindent
