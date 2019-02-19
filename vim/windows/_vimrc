@@ -58,6 +58,9 @@ map <leader>e :tabe %:h<cr>
 map <leader>f :tabnext<cr>
 map <leader>a :tabprevious<cr>
 
+" Set highlight search
+set hlsearch
+
 " Font settings
 set guifont=Courier\ New:h11
 " Don't create messy extra files
@@ -65,27 +68,24 @@ set nobackup
 set noundofile
 set noswapfile
 " General indentation
-set shiftwidth=4 tabstop=4 expandtab
+set shiftwidth=2 tabstop=2 expandtab
 " File-type specific settings
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType java setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType sql setlocal shiftwidth=4 tabstop=4 expandtab
-autocmd FileType sh setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType css setlocal shiftwidth=4 tabstop=4 expandtab
-autocmd FileType scss setlocal shiftwidth=4 tabstop=4 expandtab
-autocmd FileType less setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType cc setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType c setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType cpp setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType markdown setlocal tw=80 nonumber
-autocmd FileType tex setlocal tw=80 shiftwidth=2 tabstop=4 expandtab
+autocmd FileType sql setlocal shiftwidth=4 tabstop=4
+autocmd FileType markdown setlocal tw=80 nonumber spell
+autocmd FileType tex setlocal tw=80
+
+" Smart indentation!
+set autoindent
+filetype indent on
+
+" Incremental searching
+set incsearch
 
 " Show line numbers
 set number
 highlight LineNr guifg=#adadad
+" Better error color for Spelling mistakes
+highlight SpellBad cterm=bold ctermbg=1
 " Don't have lines wrap (looks v messy)
 set nowrap
 " Always use unix-style formatting
