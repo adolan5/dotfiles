@@ -13,6 +13,7 @@ convenient, namely:
   * Fixes for the Windows 10 Ubuntu shell, such as an explicit screen directory
     and quality-of-life color changes
   * `hag`, a quick function to grep your history
+* Some extra mapping settings that typically go into `.inputrc`
 * `shared.sh`: A script I put together for easily mounting a VirtualBox (and
   guest additions) shared directory. This script should be used on the guest OS.
 
