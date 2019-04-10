@@ -1,0 +1,14 @@
+### adolan's inputrc ###
+
+set completion-ignore-case On
+set show-all-if-ambiguous On
+
+# Command mode
+set keymap vi-command
+Control-l: clear-screen
+
+# Insert mode
+set keymap vi-insert
+Control-l: clear-screen
+Control-p: previous-history
+Control-n: next-history
