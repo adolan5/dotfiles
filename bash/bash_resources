@@ -3,8 +3,17 @@
 # Use vim, dummy
 export EDITOR=vim
 
-# The following lines are used in the Windows 10 Ubuntu Bash shell
+# Use vi input for shell
+set -o vi
 
+# Custom terminal prompt
+PS1='\[\e[32;1m\]\u@\[\e[36m\]\w\[\e[38;5;026m\]][\[\e[0m\] '
+
+# More history file size (should also go in .profile)
+HISTSIZE=10000
+HISTFILESIZE=10000
+
+### The following lines are used in the Windows 10 Ubuntu Bash shell ###
 # Change screen dir
 export SCREENDIR=$HOME/.screen
 
@@ -12,8 +21,7 @@ export SCREENDIR=$HOME/.screen
 LS_COLORS=$LS_COLORS:'di=0;96:ow=0;96:';
 export LS_COLORS
 PS1='\[\e[32;1m\]\u@\[\e[36m\]\w\[\e[0m\]>'
-
-# End Windows 10 Bash lines
+### End Windows 10 Bash lines ###
 
 # h(istory | )ag: Grep your history
 hag() {
