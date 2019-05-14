@@ -3,17 +3,13 @@ colorscheme elflord
 " Always highlight trailing whitespace
 let esMatch = '\s\+$'
 highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter,InsertLeave  * let b:es = matchadd('ExtraWhitespace', esMatch)
-autocmd InsertEnter * call matchdelete(b:es)
+autocmd BufWinEnter,InsertLeave  * call matchadd('ExtraWhitespace', esMatch)
+autocmd BufWinLeave,InsertEnter * call clearmatches()
 
-" Highlight double white space for markdown and Latex
+" Highlight double white spaces for markdown and Latex
 let dsMatch = '\v[^ ]\zs[ ]{2,}\ze[^ ]'
 highlight DoubleSpace ctermbg=blue guibg=blue
-autocmd BufWinEnter,BufCreate,InsertLeave *.tex,*.md let b:ds = matchadd('DoubleSpace', dsMatch)
-autocmd InsertEnter *.tex,*.md call matchdelete(b:ds)
-
-" Always clear machtes on exit
-autocmd BufWinLeave * call clearmatches()
+autocmd BufWinEnter,BufCreate,InsertLeave *.tex,*.md call matchadd('DoubleSpace', dsMatch)
 
 " Remove trailing whitespace
 function! StripTrailingWhitespaces()
