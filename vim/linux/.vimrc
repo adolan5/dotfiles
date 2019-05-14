@@ -1,11 +1,18 @@
 let mapleader = ","
 colorscheme elflord
-" Highlight trailing whitespace
+" Always highlight trailing whitespace
+let esMatch = '\s\+$'
 highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter,InsertLeave  * let b:es = matchadd('ExtraWhitespace', esMatch)
+autocmd InsertEnter * call matchdelete(b:es)
+
+" Highlight double white space for markdown and Latex
+let dsMatch = '\v[^ ]\zs[ ]{2,}\ze[^ ]'
+highlight DoubleSpace ctermbg=blue guibg=blue
+autocmd BufWinEnter,BufCreate,InsertLeave *.tex,*.md let b:ds = matchadd('DoubleSpace', dsMatch)
+autocmd InsertEnter *.tex,*.md call matchdelete(b:ds)
+
+" Always clear machtes on exit
 autocmd BufWinLeave * call clearmatches()
 
 " Remove trailing whitespace
@@ -15,6 +22,7 @@ function! StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfunction
+
 map <leader>w :call StripTrailingWhitespaces()<cr>
 
 " Faster tab opening, opens pwd
