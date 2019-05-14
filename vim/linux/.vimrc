@@ -46,7 +46,7 @@ set shiftwidth=2 tabstop=2 expandtab
 " File-type specific settings
 autocmd FileType sql setlocal shiftwidth=4 tabstop=4
 autocmd FileType markdown setlocal tw=80 nonumber spell
-autocmd FileType tex setlocal tw=80
+autocmd FileType tex setlocal tw=80 spell
 
 " Smart indentation!
 set autoindent
