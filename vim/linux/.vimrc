@@ -19,7 +19,7 @@ endfunction
 map <leader>w :call StripTrailingWhitespaces()<cr>
 
 " Faster tab opening, opens pwd
-map <leader>e :tabe %:h<cr>
+map <leader>e :Texplore<cr>
 
 " Faster tab switching
 map <leader>f :tabnext<cr>
@@ -62,7 +62,7 @@ set ffs=unix
 set ignorecase
 set smartcase
 " Map to quickly open the current directory in a vspit
-map <leader>c :vsplit <bar> :Ex<cr>
+map <leader>c :Vexplore<cr>
 " Map to set the current vsplit to be a lil' fatter
 map <leader>v :vertical resize 150<cr>
 " vsplit mappings
