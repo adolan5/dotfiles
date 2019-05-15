@@ -32,15 +32,15 @@ function MyDiff()
   endif
 endfunction
 
+" Begin adolan defined
+map , Nop
 let mapleader = ","
 colorscheme industry
-" Highlight trailing whitespace
+" Always highlight trailing whitespace
+let esMatch = '\s\+$'
 highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+autocmd BufEnter,InsertLeave * call matchadd('ExtraWhitespace', esMatch)
+autocmd BufLeave,BufRead,InsertEnter * call clearmatches()
 
 " Remove trailing whitespace
 function! StripTrailingWhitespaces()
@@ -49,6 +49,7 @@ function! StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfunction
+
 map <leader>w :call StripTrailingWhitespaces()<cr>
 
 " Faster tab opening, opens pwd
@@ -67,12 +68,13 @@ set guifont=Courier\ New:h11
 set nobackup
 set noundofile
 set noswapfile
+
 " General indentation
 set shiftwidth=2 tabstop=2 expandtab
-" File-type specific settings
+
+" File-type specific settings (uses ftplugin)
+filetype plugin on
 autocmd FileType sql setlocal shiftwidth=4 tabstop=4
-autocmd FileType markdown setlocal tw=80 nonumber spell
-autocmd FileType tex setlocal tw=80
 
 " Smart indentation!
 set autoindent
@@ -116,4 +118,7 @@ map <Space> :
 
 " Immediately open a DOS file with dos endings (yuck!)
 map <leader>4 :e ++ff=dos<cr>
+
+" Replacing lost comma backwards search
+noremap <leader>g ,
 
