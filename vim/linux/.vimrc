@@ -1,15 +1,11 @@
+map , Nop
 let mapleader = ","
 colorscheme elflord
 " Always highlight trailing whitespace
 let esMatch = '\s\+$'
 highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter,InsertLeave  * call matchadd('ExtraWhitespace', esMatch)
-autocmd BufWinLeave,InsertEnter * call clearmatches()
-
-" Highlight double white spaces for markdown and Latex
-let dsMatch = '\v[^ ]\zs[ ]{2,}\ze[^ ]'
-highlight DoubleSpace ctermbg=blue guibg=blue
-autocmd BufWinEnter,BufCreate,InsertLeave *.tex,*.md call matchadd('DoubleSpace', dsMatch)
+autocmd BufEnter,InsertLeave * call matchadd('ExtraWhitespace', esMatch)
+autocmd BufLeave,BufRead,InsertEnter * call clearmatches()
 
 " Remove trailing whitespace
 function! StripTrailingWhitespaces()
@@ -37,12 +33,13 @@ set guifont=Courier\ New:h11
 set nobackup
 set noundofile
 set noswapfile
+
 " General indentation
 set shiftwidth=2 tabstop=2 expandtab
-" File-type specific settings
+
+" File-type specific settings (uses ftplugin)
+filetype plugin on
 autocmd FileType sql setlocal shiftwidth=4 tabstop=4
-autocmd FileType markdown setlocal tw=80 nonumber spell
-autocmd FileType tex setlocal tw=80 spell
 
 " Smart indentation!
 set autoindent
@@ -86,4 +83,7 @@ map <Space> :
 
 " Immediately open a DOS file with dos endings (yuck!)
 map <leader>4 :e ++ff=dos<cr>
+
+" Replacing lost comma backwards search
+noremap <leader>g ,
 
