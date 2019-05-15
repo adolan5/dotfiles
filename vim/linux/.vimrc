@@ -1,4 +1,4 @@
-map , Nop
+map , <Nop>
 let mapleader = ","
 colorscheme elflord
 " Always highlight trailing whitespace

@@ -33,7 +33,7 @@ function MyDiff()
 endfunction
 
 " Begin adolan defined
-map , Nop
+map , <Nop>
 let mapleader = ","
 colorscheme industry
 " Always highlight trailing whitespace
