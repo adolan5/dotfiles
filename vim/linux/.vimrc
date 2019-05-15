@@ -4,8 +4,9 @@ colorscheme elflord
 " Always highlight trailing whitespace
 let esMatch = '\s\+$'
 highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufEnter,InsertLeave * call matchadd('ExtraWhitespace', esMatch)
-autocmd BufLeave,BufRead,InsertEnter * call clearmatches()
+autocmd BufWinEnter,BufEnter,InsertLeave * call matchadd('ExtraWhitespace', esMatch)
+autocmd BufWinLeave,BufLeave,BufRead,InsertEnter * call clearmatches()
+autocmd FileType netrw call clearmatches()
 
 " Remove trailing whitespace
 function! StripTrailingWhitespaces()
