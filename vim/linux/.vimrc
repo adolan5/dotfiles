@@ -1,3 +1,6 @@
+" Source defaults
+source $VIMRUNTIME/defaults.vim
+
 map , <Nop>
 let mapleader = ","
 colorscheme elflord
