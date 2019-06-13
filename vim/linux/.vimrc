@@ -4,6 +4,20 @@ source $VIMRUNTIME/defaults.vim
 map , <Nop>
 let mapleader = ","
 colorscheme elflord
+
+" Use Pathogen for runtime management, if available
+silent! execute pathogen#infect()
+
+" Use ag for grep-er (and Ack-er) and ctrlP
+if executable('ag')
+  set grepprg=ag\ --vimgrep
+  let g:ackprg = 'ag --vimgrep'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" Ack for the current word
+nnoremap K :Ack! "<cword>"<CR>:cw<CR>
+
 " Always highlight trailing whitespace
 let esMatch = '\s\+$'
 highlight ExtraWhitespace ctermbg=red guibg=red
