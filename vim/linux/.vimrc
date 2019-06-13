@@ -15,8 +15,11 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" Ack for the current word
-nnoremap K :Ack! "<cword>"<CR>:cw<CR>
+" LAck for the current word
+nnoremap K :LAck! "<cword>"<CR>:cw<CR>
+
+" Close quickfix after Acking
+let g:ack_autoclose = 1
 
 " Always highlight trailing whitespace
 let esMatch = '\s\+$'
