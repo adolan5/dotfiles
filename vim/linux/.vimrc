@@ -15,11 +15,12 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" LAck for the current word
-nnoremap K :LAck! "<cword>"<CR>:cw<CR>
-
-" Close quickfix after Acking
-let g:ack_autoclose = 1
+" LAck for the current word (if we have Ack.vim)
+if exists("g:loaded_ack")
+  nnoremap K :LAck! "<cword>"<CR>:cw<CR>
+  " Close quickfix after Acking
+  let g:ack_autoclose = 1
+endif
 
 " Always highlight trailing whitespace
 let esMatch = '\s\+$'
@@ -91,13 +92,14 @@ map <leader>d <c-w>l
 map <leader>b <c-w>=
 
 " use ctrlp fuzzy search
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-" Map to ctrlp in this dir (better than in root all the time)
-map <leader>t :CtrlP %:h<cr>
-" Disable ctrlp's auto find root
-let g:ctrlp_working_path_mode = 0
-" Custom ignore for ctrlp; node_modules and Java classes
-let g:ctrlp_custom_ignore = 'node_modules\|.*\.class'
+if exists("loaded_ctrlp")
+  " Map to ctrlp in this dir (better than in root all the time)
+  map <leader>t :CtrlP %:h<cr>
+  " Disable ctrlp's auto find root
+  let g:ctrlp_working_path_mode = 0
+  " Custom ignore for ctrlp; node_modules and Java classes
+  let g:ctrlp_custom_ignore = 'node_modules\|.*\.class'
+endif
 
 " This map is AMAZING for your pinkies :)
 map <Space> :
