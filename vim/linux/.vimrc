@@ -22,7 +22,7 @@ endif
 
 " LAck for the current word (expression map could be used here, but I don't
 " use K that much anyway.)
-nnoremap K :LAck! "<cword>"<CR>:cw<CR>
+nnoremap K :LAck! "<cword>"<CR>:lwindow<CR>
 if exists("g:loaded_ack")
   " Close quickfix after Acking
   let g:ack_autoclose = 1
