@@ -13,20 +13,16 @@ silent! execute pathogen#infect()
 " Map to ctrlp in this dir (better than in root all the time)
 " TODO: This should be revised
 map <leader>t :CtrlP %:h<cr>
-if exists("loaded_ctrlp")
-  " Disable ctrlp's auto find root
-  let g:ctrlp_working_path_mode = 0
-  " Custom ignore for ctrlp; node_modules and Java classes
-  let g:ctrlp_custom_ignore = 'node_modules\|.*\.class'
-endif
+" Disable ctrlp's auto find root
+let g:ctrlp_working_path_mode = 0
+" Custom ignore for ctrlp; node_modules and Java classes
+let g:ctrlp_custom_ignore = 'node_modules\|.*\.class'
 
 " LAck for the current word (expression map could be used here, but I don't
 " use K that much anyway.)
 nnoremap K :LAck! "<cword>"<CR>:lwindow<CR>
-if exists("g:loaded_ack")
-  " Close quickfix after Acking
-  let g:ack_autoclose = 1
-endif
+" Close quickfix after Acking
+let g:ack_autoclose = 1
 
 " Use ag for grep-er (and Ack-er) and ctrlP
 if executable('ag')
