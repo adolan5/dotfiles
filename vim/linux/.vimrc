@@ -90,8 +90,8 @@ map <leader>w :call StripTrailingWhitespaces()<cr>
 " Faster tab opening, opens pwd
 map <leader>e :Texplore<cr>
 " Faster tab switching
-map <leader>f :tabnext<cr>
-map <leader>a :tabprevious<cr>
+map <leader>f gt
+map <leader>a gT
 " Map to quickly open the current directory in a vspit
 map <leader>c :Vexplore<cr>
 " Map to set the current vsplit to be a lil' fatter
