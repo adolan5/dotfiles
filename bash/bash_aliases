@@ -15,3 +15,9 @@ alias topcmd="history | awk '\
   END{ for (c in CMD) \
     print CMD[c] \" \" CMD[c] / count * 100 \"% \" c \
   }' | column -c3 -t | sort -nr | nl"
+
+# Cygwin specific
+alias home="cd /cygdrive/c/PATH_TO_YOUR_USER"
+# Note the use of the icon (optional)
+alias term="cygstart mintty -i /Terminal.ico -t Cygwin /bin/bash -li"
+alias x="cygstart"
