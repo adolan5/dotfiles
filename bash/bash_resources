@@ -33,3 +33,13 @@ hag() {
   fi
   history | $GREPPER "$1"
 }
+
+### Cygwin Specific ###
+# (Cygwin) Easily execute files
+x() {
+  for f in "$@"
+  do
+    cygstart "$f"
+  done
+}
+### end Cygwin specific ###
