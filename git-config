@@ -1,7 +1,7 @@
 # Make sure to rename me to '.gitconfig'!
 [user]
     name = Andy Dolan
-    # email = [ ADD ME ]
+    email = 20274393+adolan5@users.noreply.github.com
 [push]
     default = simple
 [core]
