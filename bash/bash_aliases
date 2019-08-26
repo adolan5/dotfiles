@@ -4,7 +4,7 @@
 # List screens
 alias sls="screen -list"
 
-# For when I'm going to fast for my own good
+# For when I'm going too fast for my own good
 alias sl="ls"
 alias claer="clear"
 alias celar="clear"
