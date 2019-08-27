@@ -34,6 +34,14 @@ hag() {
   history | $GREPPER "$1"
 }
 
+# Simple open-this-file
+x() {
+  for f in "$@"
+  do
+    xdg-open "$f"
+  done
+}
+
 ### Cygwin Specific ###
 # (Cygwin) Easily execute files
 x() {
