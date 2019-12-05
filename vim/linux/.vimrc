@@ -11,8 +11,8 @@ silent! execute pathogen#infect()
 
 " use ctrlp fuzzy search
 " Map to ctrlp in this dir (better than in root all the time)
-" TODO: This should be revised
-map <leader>t :CtrlP %:h<cr>
+" TODO: Verify that this works consistently
+map <leader>t :CtrlP %:p:h<cr>
 " Disable ctrlp's auto find root
 let g:ctrlp_working_path_mode = 0
 " Custom ignore for ctrlp; node_modules and Java classes
