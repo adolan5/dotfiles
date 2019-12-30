@@ -1,41 +1,40 @@
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
+" Source defaults
+source $VIMRUNTIME/defaults.vim
 
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      if empty(&shellxquote)
-        let l:shxq_sav = ''
-        set shellxquote&
-      endif
-      let cmd = '"' . $VIMRUNTIME . '\diff"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
-  if exists('l:shxq_sav')
-    let &shellxquote=l:shxq_sav
-  endif
-endfunction
+" Windows Specific
+nnoremap <M-Space> :simalt ~<CR>
 
-" Begin adolan defined
 map , <Nop>
 let mapleader = ","
 colorscheme industry
+
+" ''' Plugins '''
+" Use Pathogen for runtime management, if available
+silent! execute pathogen#infect()
+
+" use ctrlp fuzzy search
+" Map to ctrlp in this dir (better than in root all the time)
+" TODO: Verify that this works consistently
+map <leader>t :CtrlP %:p:h<cr>
+" Disable ctrlp's auto find root
+let g:ctrlp_working_path_mode = 0
+" Custom ignore for ctrlp; node_modules and Java classes
+let g:ctrlp_custom_ignore = 'node_modules\|.*\.class'
+
+" LAck for the current word (expression map could be used here, but I don't
+" use K that much anyway.)
+nnoremap K :LAck! "<cword>"<CR>:lwindow<CR>
+" Close quickfix after Acking
+let g:ack_autoclose = 1
+
+" Use ag for grep-er (and Ack-er) and ctrlP
+if executable('ag')
+  set grepprg=ag\ --vimgrep
+  let g:ackprg = 'ag --vimgrep'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" ''' Highlighting match groups '''
 " Always highlight trailing whitespace
 let esMatch = '\s\+$'
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -43,6 +42,7 @@ autocmd BufWinEnter,BufEnter,InsertLeave * call matchadd('ExtraWhitespace', esMa
 autocmd BufWinLeave,BufLeave,BufRead,InsertEnter * call clearmatches()
 autocmd FileType netrw call clearmatches()
 
+" ''' Functions '''
 " Remove trailing whitespace
 function! StripTrailingWhitespaces()
   let l = line(".")
@@ -51,42 +51,20 @@ function! StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
-map <leader>w :call StripTrailingWhitespaces()<cr>
-
-" Faster tab opening, opens pwd
-map <leader>e :Texplore<cr>
-
-" Faster tab switching
-map <leader>f :tabnext<cr>
-map <leader>a :tabprevious<cr>
-
+" ''' General settings '''
+" Incremental searching
+set incsearch
 " Set highlight search
 set hlsearch
-
 " Font settings
 set guifont=Courier\ New:h11
 " Don't create messy extra files
 set nobackup
 set noundofile
 set noswapfile
-
-" General indentation
-set shiftwidth=2 tabstop=2 expandtab
-
-" File-type specific settings (uses ftplugin)
-filetype plugin on
-autocmd FileType sql setlocal shiftwidth=4 tabstop=4
-
-" Smart indentation!
-set autoindent
-filetype indent on
-
-" Incremental searching
-set incsearch
-
 " Show line numbers
 set number
-highlight LineNr guifg=#adadad
+highlight LineNr guifg=#adadad ctermfg=gray
 " Better error color for Spelling mistakes
 highlight SpellBad cterm=bold ctermbg=1
 " Don't have lines wrap (looks v messy)
@@ -96,6 +74,27 @@ set ffs=unix
 " Use smart case for searching
 set ignorecase
 set smartcase
+" General indentation
+set shiftwidth=2 tabstop=2 expandtab
+
+" ''' ftplugin  '''
+filetype plugin on
+" Smart indentation!
+set autoindent
+filetype indent on
+" Specific file type settings
+autocmd FileType sql setlocal shiftwidth=4 tabstop=4
+
+
+" ''' Maps '''
+" Function calls
+map <leader>w :call StripTrailingWhitespaces()<cr>
+
+" Faster tab opening, opens pwd
+map <leader>e :Texplore<cr>
+" Faster tab switching
+map <leader>f gt
+map <leader>a gT
 " Map to quickly open the current directory in a vspit
 map <leader>c :Vexplore<cr>
 " Map to set the current vsplit to be a lil' fatter
@@ -104,22 +103,9 @@ map <leader>v :vertical resize 150<cr>
 map <leader>s <c-w>h
 map <leader>d <c-w>l
 map <leader>b <c-w>=
-
-" use ctrlp fuzzy search
-set runtimepath^=$HOME/vimfiles/bundle/ctrlp.vim
-" Map to ctrlp in this dir (better than in root all the time)
-map <leader>t :CtrlP %:h<cr>
-" Disable ctrlp's auto find root
-let g:ctrlp_working_path_mode = 0
-" Custom ignore for ctrlp; node_modules and Java classes
-let g:ctrlp_custom_ignore = 'node_modules\|.*\.class'
-
 " This map is AMAZING for your pinkies :)
 map <Space> :
-
 " Immediately open a DOS file with dos endings (yuck!)
 map <leader>4 :e ++ff=dos<cr>
-
 " Replacing lost comma backwards search
 noremap <leader>g ,
-
