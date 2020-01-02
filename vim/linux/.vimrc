@@ -3,6 +3,21 @@ source $VIMRUNTIME/defaults.vim
 
 map , <Nop>
 let mapleader = ","
+
+" Highlight colors (ensured to not be overridden by colorscheme changes)
+function! HiColors() abort
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  " Better color for line numbers
+  highlight LineNr guifg=#adadad ctermfg=gray
+  " Better error color for Spelling mistakes
+  highlight SpellBad cterm=bold ctermbg=1
+endfunction
+
+augroup MyColors
+  autocmd!
+  autocmd ColorScheme * call HiColors()
+augroup END
+
 colorscheme elflord
 
 " ''' Plugins '''
@@ -34,7 +49,6 @@ endif
 " ''' Highlighting match groups '''
 " Always highlight trailing whitespace
 let esMatch = '\s\+$'
-highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter,BufEnter,InsertLeave * call matchadd('ExtraWhitespace', esMatch)
 autocmd BufWinLeave,BufLeave,BufRead,InsertEnter * call clearmatches()
 autocmd FileType netrw call clearmatches()
@@ -61,9 +75,6 @@ set noundofile
 set noswapfile
 " Show line numbers
 set number
-highlight LineNr guifg=#adadad ctermfg=gray
-" Better error color for Spelling mistakes
-highlight SpellBad cterm=bold ctermbg=1
 " Don't have lines wrap (looks v messy)
 set nowrap
 " Always use unix-style formatting
