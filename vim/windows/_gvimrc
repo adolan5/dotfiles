@@ -1,3 +1,4 @@
 colorscheme industry
 set guifont=Consolas:h14
 nnoremap <M-Space> :simalt ~<CR>
+set vb t_vb=
