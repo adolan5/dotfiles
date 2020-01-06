@@ -10,7 +10,7 @@ function! HiColors() abort
   " Better color for line numbers
   highlight LineNr guifg=#adadad ctermfg=gray
   " Better error color for Spelling mistakes
-  highlight SpellBad cterm=bold ctermbg=1
+  highlight SpellBad cterm=bold ctermbg=red
 endfunction
 
 augroup MyColors
