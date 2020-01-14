@@ -32,6 +32,8 @@ map <leader>t :CtrlP %:p:h<cr>
 let g:ctrlp_working_path_mode = 0
 " Custom ignore for ctrlp; node_modules and Java classes
 let g:ctrlp_custom_ignore = 'node_modules\|.*\.class'
+" Open multiple ctrlp files in new tabs
+let g:ctrlp_open_multiple_files = 't'
 
 " LAck for the current word (expression map could be used here, but I don't
 " use K that much anyway.)
