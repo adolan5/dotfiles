@@ -95,6 +95,8 @@ filetype indent on
 " Specific file type settings
 autocmd FileType sql setlocal shiftwidth=4 tabstop=4
 
+" ''' Folding options '''
+let g:markdown_folding=1
 
 " ''' Maps '''
 " Function calls
