@@ -1,0 +1,20 @@
+# List screens
+alias sls="screen -list"
+
+# For when I'm going to fast for my own good
+alias sl="ls"
+alias claer="clear"
+alias celar="clear"
+
+# Spawn new terminal
+alias term="xfce4-terminal"
+
+# Get ranked top used commands (modified for zsh history)
+alias topcmd="history 0 | awk '\
+  { CMD[\$2]++; count++; } \
+  END{ for (c in CMD) \
+    print CMD[c] \" \" CMD[c] / count * 100 \"% \" c \
+  }' | column -c3 -t | sort -nr | nl"
+
+# Nicer df output (especially when using snaps)
+alias df="df -x tmpfs -x squashfs"
