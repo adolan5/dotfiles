@@ -79,6 +79,16 @@ x() {
     xdg-open "$f"
   done
 }
+#
+### Cygwin Specific Functions ###
+# (Cygwin) Easily execute files
+x() {
+  for f in "$@"
+  do
+    cygstart "$f"
+  done
+}
+### end Cygwin specific ###
 
 ## Custom prompt ##
 PROMPT="%B%F{10}%n%f%b%B%F{207}@%f%b%B%F{45}%~%f%b%B%F{21}][%f%b "
