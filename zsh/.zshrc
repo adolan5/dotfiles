@@ -52,6 +52,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 ## Other general options ##
 # Ensure that we list all ambiguities right away (no second tab press to get list)
 setopt nolistambiguous
+# Use extended globbing capabilities
+setopt extended_glob
 
 ### Begin adolan defined ###
 
