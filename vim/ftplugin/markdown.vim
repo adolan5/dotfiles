@@ -7,4 +7,5 @@ augroup mdgroup
   autocmd BufWinEnter *.md setlocal tw=80
   autocmd BufWinEnter *.md setlocal nonumber
   autocmd BufWinEnter *.md setlocal spell
+  autocmd BufWinEnter *.md setlocal cc=+1
 augroup END
