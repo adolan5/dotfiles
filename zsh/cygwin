@@ -1,0 +1,14 @@
+## Cygwin Functions ##
+# Easily execute files
+x() {
+  for f in "$@"
+  do
+    cygstart "$f"
+  done
+}
+
+## Cygwin Aliases ##
+# Quick CD to Windows home directory
+alias home="cd /cygdrive/c/PATH_TO_YOUR_USER"
+# Note the use of the icon (optional)
+alias term="cygstart mintty -i /Terminal.ico -t Cygwin /bin/bash -li"

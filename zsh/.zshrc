@@ -66,7 +66,6 @@ source ~/.zsh_aliases
 ## Functions ##
 hag() {
   local GREPPER=ag
-  # which $GREPPER
   if [ -z $(which $GREPPER) ]
   then
     GREPPER="grep --color=auto"
@@ -74,23 +73,13 @@ hag() {
   history 0 | $GREPPER "$1"
 }
 
-# Simple open
+# Simple open (Debian, graphical)
 x() {
   for f in "$@"
   do
     xdg-open "$f"
   done
 }
-#
-### Cygwin Specific Functions ###
-# (Cygwin) Easily execute files
-x() {
-  for f in "$@"
-  do
-    cygstart "$f"
-  done
-}
-### end Cygwin specific ###
 
 ## Custom prompt ##
 PROMPT="%B%F{10}%n%f%b%B%F{207}@%f%b%B%F{45}%~%f%b%B%F{21}][%f%b "
@@ -123,4 +112,4 @@ if [[ -x /usr/lib/command-not-found ]] ; then
 	fi
 fi
 
-### End adolan defined ###
+### End adolan defaults ###

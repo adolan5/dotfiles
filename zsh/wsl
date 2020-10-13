@@ -1,0 +1,9 @@
+# Simple WSL open (execute/start any file)
+x() {
+  for f in "$@"
+  do
+    local fullpath="$(readlink -n -f $f)"
+    local wpath="$(wslpath -w $fullpath)"
+    powershell.exe -c "start \"$wpath\""
+  done
+}
