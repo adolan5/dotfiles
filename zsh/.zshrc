@@ -4,7 +4,7 @@ autoload -Uz promptinit
 promptinit
 
 # History settings
-setopt histignorealldups sharehistory
+setopt sharehistory
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
