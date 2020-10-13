@@ -83,6 +83,8 @@ x() {
 
 ## Custom prompt ##
 PROMPT="%B%F{10}%n%f%b%B%F{207}@%f%b%B%F{45}%~%f%b%B%F{21}][%f%b "
+# One that also includes @hostname
+# PROMPT="%B%F{10}%n%f%b%B%F{207}@%m%f%b%B%F{45}%~%f%b%B%F{21}][%f%b "
 
 ## Key bindings ##
 # Use vim keybindings
