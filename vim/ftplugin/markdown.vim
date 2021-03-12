@@ -8,4 +8,5 @@ augroup mdgroup
   autocmd BufWinEnter *.md setlocal nonumber
   autocmd BufWinEnter *.md setlocal spell
   autocmd BufWinEnter *.md setlocal cc=+1
+  autocmd BufWinEnter *.md setlocal nojoinspaces
 augroup END

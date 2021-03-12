@@ -6,4 +6,5 @@ augroup texgroup
   autocmd BufEnter,InsertLeave *.tex call matchadd('DoubleSpace', dsMatch)
   autocmd BufWinEnter *.tex setlocal tw=80
   autocmd BufWinEnter *.tex setlocal spell
+  autocmd BufWinEnter *.md setlocal nojoinspaces
 augroup END
