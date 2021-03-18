@@ -7,3 +7,29 @@ x() {
     powershell.exe -c "start \"$wpath\""
   done
 }
+
+# Launch headless VirtualBox VM (assumes default vbox install location)
+vbox() {
+  if [ -z "$1" ]
+  then
+    local MACHINE=Playpen
+  else
+    local MACHINE=$1
+  fi
+
+  echo "Machine: $MACHINE"
+  powershell.exe -c start -FilePath  "\"$(wslpath -w /mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe)\"" -ArgumentList \"startvm\",\"--type headless\", \"$MACHINE\"
+}
+
+# Pause VirtualBox VM
+vboxpause() {
+  if [ -z "$1" ]
+  then
+    local MACHINE=Playpen
+  else
+    local MACHINE=$1
+  fi
+
+  echo "Machine: $MACHINE"
+  powershell.exe -c start -FilePath  "\"$(wslpath -w /mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe)\"" -ArgumentList \"controlvm\",\"$MACHINE\",\"savestate\"
+}
