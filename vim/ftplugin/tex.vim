@@ -1,10 +1,14 @@
+setlocal tw=80
+setlocal spell
+setlocal nojoinspaces
+
 " Highlight double white spaces for Latex
-let dsMatch = '\v[^ ]\zs[ ]{2,}\ze[^ ]'
+if !exists("dsMatch")
+  let dsMatch = '\v[^ ]\zs[ ]{2,}\ze[^ ]'
+endif
+
 highlight DoubleSpace ctermbg=blue guibg=blue
 augroup texgroup
   autocmd!
   autocmd BufEnter,InsertLeave *.tex call matchadd('DoubleSpace', dsMatch)
-  autocmd BufWinEnter *.tex setlocal tw=80
-  autocmd BufWinEnter *.tex setlocal spell
-  autocmd BufWinEnter *.md setlocal nojoinspaces
 augroup END
