@@ -65,12 +65,8 @@ source ~/.zsh_aliases
 
 ## Functions ##
 hag() {
-  local GREPPER=ag
-  if [ -z $(which $GREPPER) ]
-  then
-    GREPPER="grep --color=auto"
-  fi
-  history 0 | $GREPPER "$1"
+  # history 0 | grep "$1"
+  history 0 | ag "$1"
 }
 
 # Simple open (Debian, graphical)
