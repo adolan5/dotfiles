@@ -94,7 +94,7 @@ set autoindent
 filetype indent on
 " Specific file type settings
 autocmd FileType sql setlocal shiftwidth=4 tabstop=4
-autocmd FileType gitcommit setlocal spell
+autocmd FileType gitcommit setlocal spell cc=+1
 
 " ''' Folding options '''
 let g:markdown_folding=1
