@@ -114,4 +114,10 @@ if [[ -x /usr/lib/command-not-found ]] ; then
 	fi
 fi
 
+# Configure fzf for completion
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+# Alternative for completion if not yet included in package (manual download)
+# source /home/adolan/.zsh/completion.zsh
+
 ### End adolan defaults ###
