@@ -21,8 +21,8 @@ augroup END
 colorscheme elflord
 
 " ''' Plugins '''
-" Use Pathogen for runtime management, if available
-silent! execute pathogen#infect()
+" Use Pathogen for runtime management, if available (for Vim version < 8)
+" silent! execute pathogen#infect()
 
 " use ctrlp fuzzy search
 " Map to ctrlp in this dir (better than in root all the time)
