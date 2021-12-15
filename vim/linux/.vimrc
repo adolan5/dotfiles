@@ -78,8 +78,6 @@ endfunction
 set incsearch
 " Set highlight search
 set hlsearch
-" Font settings
-set guifont=Courier\ New:h11
 " Don't create messy extra files
 set nobackup
 set noundofile

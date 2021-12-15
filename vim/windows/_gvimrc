@@ -1,7 +1,8 @@
 colorscheme industry
-set guifont=Consolas:h14
+set guifont=Consolas:h12
 nnoremap <M-Space> :simalt ~<CR>
-set vb t_vb=
-set go -=m
-set go -=T
-set go -=r
+set visualbell t_vb=
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
