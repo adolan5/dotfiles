@@ -64,6 +64,15 @@ function! StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
+" Toggle a reasonbly wide local fold column
+function! ToggleFoldCol() abort
+  if &foldcolumn == 0
+    setlocal foldcolumn=8
+  else
+    set foldcolumn&
+  end
+endfunction
+
 " ''' General settings '''
 " Incremental searching
 set incsearch
@@ -122,3 +131,5 @@ map <Space> :
 map <leader>4 :e ++ff=dos<cr>
 " Replacing lost comma backwards search
 noremap <leader>g ,
+" Quickly toggle fold column of 8
+map <leader>j :call ToggleFoldCol()<cr>
