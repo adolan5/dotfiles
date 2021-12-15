@@ -9,6 +9,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
+## zsh Plugins ##
+source ~/.zsh/zsh-z/zsh-z.plugin.zsh
+# source /etc/zsh_command_not_found
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
@@ -95,10 +99,6 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^U' backward-kill-line
 bindkey '^Y' vi-put-after
 bindkey '^[[Z' reverse-menu-complete
-
-## zsh Plugins ##
-source ~/.zsh/zsh-z/zsh-z.plugin.zsh
-# source /etc/zsh_command_not_found
 
 # Proper use of command-not-found, because /etc/zsh_command_not_found has a bug
 # that results in no error output on missing command with no suggestion; see:
