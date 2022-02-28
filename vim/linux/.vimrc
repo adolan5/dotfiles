@@ -131,3 +131,5 @@ map <leader>4 :e ++ff=dos<cr>
 noremap <leader>g ,
 " Quickly toggle fold column of 8
 map <leader>j :call ToggleFoldCol()<cr>
+" Toggle whether current search results are highlighted
+map <leader>h :let v:hlsearch = !v:hlsearch<cr>
