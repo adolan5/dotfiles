@@ -1,5 +1,7 @@
 colorscheme industry
-set guifont=Consolas:h12
+set guifont=Monospace\ 14
+" Windows alternative
+" set guifont=Consolas:h12
 nnoremap <M-Space> :simalt ~<CR>
 set visualbell t_vb=
 set guioptions-=m
