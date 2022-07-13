@@ -87,7 +87,7 @@ if [ -z $SSH_CLIENT ]
 then
   HOSTPROMPT=""
 fi
-PROMPT="%B%F{10}%n%f%b%B%F{207}@$HOSTPROMPT%f%b%B%F{45}%~%f%b%B%F{21}][%f%b "
+PROMPT="%B%F{10}%n%F{207}@$HOSTPROMPT%F{45}|%2~%F{21}][%f%b "
 unset HOSTPROMPT
 
 ## Key bindings ##
