@@ -98,9 +98,9 @@ set shiftwidth=2 tabstop=2 expandtab
 let g:rnable = 1
 augroup relnums
   autocmd!
-  autocmd BufEnter * if !exists('b:rnable') | let b:rnable = g:rnable | endif
-  autocmd BufEnter,InsertLeave,WinEnter * if &nu && b:rnable | set relativenumber | endif
-  autocmd BufLeave,InsertEnter,WinLeave * if &nu && b:rnable | set norelativenumber | endif
+  autocmd BufEnter,CmdWinEnter * if !exists('b:rnable') | let b:rnable = g:rnable | endif
+  autocmd BufEnter,InsertLeave,WinEnter * if &nu && (exists('b:rnable') && b:rnable) | set relativenumber | endif
+  autocmd BufLeave,InsertEnter,WinLeave * if &nu && (exists('b:rnable') && b:rnable) | set norelativenumber | endif
 augroup END
 
 " ''' ftplugin  '''
