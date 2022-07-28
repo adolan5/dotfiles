@@ -93,6 +93,12 @@ set ignorecase
 set smartcase
 " General indentation
 set shiftwidth=2 tabstop=2 expandtab
+" Conditionally enable relative line numbers
+augroup relnums
+  autocmd!
+  autocmd BufEnter,InsertLeave,WinEnter * if &nu | set relativenumber | endif
+  autocmd BufLeave,InsertEnter,WinLeave * if &nu | set norelativenumber | endif
+augroup END
 
 " ''' ftplugin  '''
 filetype plugin on

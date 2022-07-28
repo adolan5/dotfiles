@@ -1,5 +1,5 @@
 setlocal tw=80
-setlocal nonumber
+setlocal nonumber norelativenumber
 setlocal spell
 setlocal cc=+1
 setlocal nojoinspaces
