@@ -38,11 +38,16 @@ Contains my Vim configuration files.
 ## `zsh`
 
 * Contains general zsh configuration files, including:
-  * `.zshrc`: Defaults to be used on a fresh installation of zsh
-  * `.zsh_aliases`: Sourced by `.zshrc`, contains basic aliases
+  * `zshrc`: Defaults to be used on a fresh installation of zsh
+  * `zsh_aliases`: Sourced by `.zshrc`, contains basic aliases
 * There are also more platform specific files:
   * `cygwin`: Contains a few functions and aliases used on a Cygwin terminal
   * `wsl`: Contains functions/aliases to be used on a WSL terminal
+
+### Plugins
+
+* [`zsh-z`](https://github.com/agkozak/zsh-z): Quickly navigate to most commonly
+  visited directories.
 
 ## Scripts
 
