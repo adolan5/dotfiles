@@ -94,6 +94,15 @@ set smartcase
 " General indentation
 set shiftwidth=2 tabstop=2 expandtab
 
+" Conditionally enable relative line numbers (disable with b:rnable = 0)
+let g:rnable = 1
+augroup relnums
+  autocmd!
+  autocmd BufEnter,CmdWinEnter * if !exists('b:rnable') | let b:rnable = g:rnable | endif
+  autocmd BufEnter,InsertLeave,WinEnter * if &nu && (exists('b:rnable') && b:rnable) | set relativenumber | endif
+  autocmd BufLeave,InsertEnter,WinLeave * if &nu && (exists('b:rnable') && b:rnable) | set norelativenumber | endif
+augroup END
+
 " ''' ftplugin  '''
 filetype plugin on
 " Smart indentation!
