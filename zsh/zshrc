@@ -11,7 +11,23 @@ HISTFILE=~/.zsh_history
 
 ## zsh Plugins ##
 source ~/.zsh/zsh-z/zsh-z.plugin.zsh
-# source /etc/zsh_command_not_found
+source /etc/zsh_command_not_found
+
+# Proper use of command-not-found, because /etc/zsh_command_not_found has a bug
+# that results in no error output on missing command with no suggestion; see:
+# https://bugs.launchpad.net/ubuntu/+source/command-not-found/+bug/1766068 This
+# version is literally copied from /etc/zsh_command_not_found but removes the
+# --no-failure-msg. This has been resolved in recent Debian versions of
+# command-not-found.
+#
+# if [[ -x /usr/lib/command-not-found ]] ; then
+# 	if (( ! ${+functions[command_not_found_handler]} )) ; then
+# 		function command_not_found_handler {
+# 			[[ -x /usr/lib/command-not-found ]] || return 1
+# 			/usr/lib/command-not-found -- ${1+"$1"} && :
+# 		}
+# 	fi
+# fi
 
 # Use modern completion system
 autoload -Uz compinit
@@ -99,20 +115,6 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^U' backward-kill-line
 bindkey '^Y' vi-put-after
 bindkey '^[[Z' reverse-menu-complete
-
-# Proper use of command-not-found, because /etc/zsh_command_not_found has a bug
-# that results in no error output on missing command with no suggestion; see:
-# https://bugs.launchpad.net/ubuntu/+source/command-not-found/+bug/1766068
-# This version is literally copied from /etc/zsh_command_not_found but removes
-# the --no-failure-msg
-if [[ -x /usr/lib/command-not-found ]] ; then
-	if (( ! ${+functions[command_not_found_handler]} )) ; then
-		function command_not_found_handler {
-			[[ -x /usr/lib/command-not-found ]] || return 1
-			/usr/lib/command-not-found -- ${1+"$1"} && :
-		}
-	fi
-fi
 
 # Configure fzf for completion
 source /usr/share/doc/fzf/examples/key-bindings.zsh
