@@ -111,7 +111,7 @@ filetype indent on
 autocmd FileType sql setlocal shiftwidth=4 tabstop=4
 autocmd FileType gitcommit setlocal spell cc=+1
 " Syntax highlighting for fenced code blocks in Markdown
-let g:markdown_fenced_languages=["sh", "conf", "yaml", "dockerfile"]
+let g:markdown_fenced_languages=["sh", "conf", "yaml", "dockerfile", "json", "python"]
 
 " ''' Folding options '''
 let g:markdown_folding=1
