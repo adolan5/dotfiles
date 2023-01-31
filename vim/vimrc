@@ -91,7 +91,7 @@ set ffs=unix
 set ignorecase
 set smartcase
 " General indentation
-set shiftwidth=2 tabstop=2 expandtab
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 " Conditionally enable relative line numbers (disable with b:rnable = 0)
 let g:rnable = 1
@@ -110,10 +110,13 @@ filetype indent on
 " Specific file type settings
 autocmd FileType sql setlocal shiftwidth=4 tabstop=4
 autocmd FileType gitcommit setlocal spell cc=+1
+
+" ''' Markdown Options '''
+" Disable recommended style
+let g:markdown_recommended_style=0
 " Syntax highlighting for fenced code blocks in Markdown
 let g:markdown_fenced_languages=["sh", "conf", "yaml", "dockerfile", "json", "python"]
-
-" ''' Folding options '''
+" Enable Markdown folding
 let g:markdown_folding=1
 
 " ''' Maps '''
