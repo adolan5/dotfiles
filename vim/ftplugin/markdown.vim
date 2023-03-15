@@ -6,7 +6,7 @@ setlocal nojoinspaces
 
 " Highlight double white spaces for markdown
 if !exists("dsMatch")
-  let dsMatch = '\v[^ ]\zs[ ]{2,}\ze[^ ]'
+  let dsMatch = '\v[^ |]\zs[ ]{2,}\ze[^ |]'
 endif
 
 highlight DoubleSpace ctermbg=blue guibg=blue
