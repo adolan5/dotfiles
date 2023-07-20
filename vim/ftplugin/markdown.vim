@@ -4,6 +4,9 @@ setlocal spell
 setlocal cc=+1
 setlocal nojoinspaces
 
+" Syntax highlighting for fenced code blocks
+let g:markdown_fenced_languages=["sh", "conf", "yaml", "dockerfile"]
+
 " Highlight double white spaces for markdown
 if !exists("dsMatch")
   let dsMatch = '\v[^ |]\zs[ ]{2,}\ze[^ |]'
