@@ -13,3 +13,6 @@
 [submodule "vim/plugins/start/SimpylFold"]
 	path = vim/plugins/start/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "zsh/plugins/zsh-z"]
+	path = zsh/plugins/zsh-z
+	url = https://github.com/agkozak/zsh-z.git
