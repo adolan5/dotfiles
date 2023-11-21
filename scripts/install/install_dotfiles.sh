@@ -1,10 +1,7 @@
 #!/bin/bash
-echo "Importing functions..."
-
 # Create directories
 create_dots_dirs() {
-  cd $DEST_DIR
-  mkdir -p .vim/pack .zsh
+  mkdir -p $DEST_DIR/.vim/pack $DEST_DIR/.zsh
 }
 
 # Create symlinks
@@ -18,6 +15,7 @@ create_dots_symlinks() {
   ln -s -T $DOTFILES_DIR/vim/ftplugin $DEST_DIR/.vim/ftplugin
   ln -s -T $DOTFILES_DIR/vim/plugins $DEST_DIR/.vim/pack/plugins
   ln -s -T $DOTFILES_DIR/vim/vimrc $DEST_DIR/.vimrc
+  ln -s -T $DOTFILES_DIR/vim/gvimrc $DEST_DIR/.gvimrc
 
   ## Other configs
   ln -s -T $DOTFILES_DIR/configs/tmux.conf $DEST_DIR/.tmux.conf
@@ -35,9 +33,4 @@ create_dots_files() {
 
   echo "Prepending source line to .zshrc. Uncomment to source zshrc base."
   echo "#source $DEST_DIR/.zsh/zshrc" | cat - $DEST_DIR/.zshrc | tee $DEST_DIR/.zshrc
-}
-
-test_vars() {
-  echo "Dots dir: $DOTFILES_DIR"
-  echo "Dest dir: $DEST_DIR"
 }
