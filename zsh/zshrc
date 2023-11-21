@@ -81,7 +81,7 @@ setopt extended_glob
 export EDITOR=vim
 
 # Source external files
-source ~/.zsh_aliases
+source ~/.zsh/zsh_aliases
 
 ## Functions ##
 hag() {
