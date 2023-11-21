@@ -10,18 +10,18 @@ create_dots_dirs() {
 # Create symlinks
 create_dots_symlinks() {
   ## zsh
-  ln -s $DOTFILES_DIR/zsh/plugins $DEST_DIR/.zsh/plugins
-  ln -s $DOTFILES_DIR/zsh/zshrc $DEST_DIR/.zsh/zshrc
-  ln -s $DOTFILES_DIR/zsh/zsh_aliases $DEST_DIR/.zsh/zsh_aliases
+  ln -s -T $DOTFILES_DIR/zsh/plugins $DEST_DIR/.zsh/plugins
+  ln -s -T $DOTFILES_DIR/zsh/zshrc $DEST_DIR/.zsh/zshrc
+  ln -s -T $DOTFILES_DIR/zsh/zsh_aliases $DEST_DIR/.zsh/zsh_aliases
 
   ## vim
-  ln -s $DOTFILES_DIR/vim/ftplugin $DEST_DIR/.vim/ftplugin
-  ln -s $DOTFILES_DIR/vim/plugins $DEST_DIR/.vim/pack/plugins
-  ln -s $DOTFILES_DIR/vim/vimrc $DEST_DIR/.vimrc
+  ln -s -T $DOTFILES_DIR/vim/ftplugin $DEST_DIR/.vim/ftplugin
+  ln -s -T $DOTFILES_DIR/vim/plugins $DEST_DIR/.vim/pack/plugins
+  ln -s -T $DOTFILES_DIR/vim/vimrc $DEST_DIR/.vimrc
 
   ## Other configs
-  ln -s $DOTFILES_DIR/configs/tmux.conf $DEST_DIR/.tmux.conf
-  ln -s $DOTFILES_DIR/configs/gitconfig $DEST_DIR/.gitconfig
+  ln -s -T $DOTFILES_DIR/configs/tmux.conf $DEST_DIR/.tmux.conf
+  ln -s -T $DOTFILES_DIR/configs/gitconfig $DEST_DIR/.gitconfig
 }
 
 create_dots_files() {
@@ -41,5 +41,3 @@ test_vars() {
   echo "Dots dir: $DOTFILES_DIR"
   echo "Dest dir: $DEST_DIR"
 }
-
-# Create root files

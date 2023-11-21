@@ -22,7 +22,7 @@ done
 shift $(($OPTIND - 1))
 
 echo "Dots dir is $DOTFILES_DIR"
-read -p "This script will install configurations into $DEST_DIR - continue? (y/n): " yn
+read -p "This script will install configurations into $DEST_DIR - continue? (y/[n]): " yn
 case $yn in
   y)
     echo "Continuing..."
