@@ -1,13 +1,7 @@
-# List screens
-alias sls="screen -list"
-
 # For when I'm going to fast for my own good
 alias sl="ls"
 alias claer="clear"
 alias celar="clear"
-
-# Spawn new terminal
-alias term="xfce4-terminal"
 
 # Get ranked top used commands (modified for zsh history)
 alias topcmd="history 0 | awk '\

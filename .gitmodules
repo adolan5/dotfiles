@@ -1,0 +1,18 @@
+[submodule "vim/plugins/start/fugitive"]
+	path = vim/plugins/start/fugitive
+	url = https://tpope.io/vim/fugitive.git
+[submodule "vim/plugins/start/ctrlp.vim"]
+	path = vim/plugins/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/plugins/start/ack.vim"]
+	path = vim/plugins/start/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/plugins/start/typescript-vim"]
+	path = vim/plugins/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim/plugins/start/SimpylFold"]
+	path = vim/plugins/start/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "zsh/plugins/zsh-z"]
+	path = zsh/plugins/zsh-z
+	url = https://github.com/agkozak/zsh-z.git

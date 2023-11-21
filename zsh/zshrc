@@ -10,7 +10,7 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 ## zsh Plugins ##
-source ~/.zsh/zsh-z/zsh-z.plugin.zsh
+source ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh
 source /etc/zsh_command_not_found
 
 # Proper use of command-not-found, because /etc/zsh_command_not_found has a bug
