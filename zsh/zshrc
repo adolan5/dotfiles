@@ -12,6 +12,7 @@ HISTFILE=~/.zsh_history
 ## zsh Plugins ##
 source ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh
 source /etc/zsh_command_not_found
+fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
 
 # Proper use of command-not-found, because /etc/zsh_command_not_found has a bug
 # that results in no error output on missing command with no suggestion; see:
