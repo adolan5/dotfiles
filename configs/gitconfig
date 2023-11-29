@@ -1,17 +1,19 @@
 # Make sure to rename me to '.gitconfig'!
 [user]
-    name = Andy Dolan
-    email = 20274393+adolan5@users.noreply.github.com
+  name = Andy Dolan
+  email = 20274393+adolan5@users.noreply.github.com
 [push]
-    default = simple
+  default = simple
+[pull]
+  rebase = false
 [core]
-    autocrlf = false
+  autocrlf = false
 [alias]
-    # List all branches in descending order of modification
-    ob = branch -a --sort=-committerdate
-    # Faster status
-    at = status
-    # Tig lite (ADOG)
-    tig = log --all --decorate --oneline --graph
-    # Amed previous commit
-    oops = commit --amend
+  # List all branches in descending order of modification
+  ob = branch -a --sort=-committerdate
+  # Faster status
+  at = status
+  # Tig lite (ADOG)
+  tig = log --all --decorate --oneline --graph
+  # Amed previous commit
+  oops = commit --amend
