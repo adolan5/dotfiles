@@ -10,7 +10,6 @@ create_dots_symlinks() {
   ln -s -T $DOTFILES_DIR/zsh/plugins $DEST_DIR/.zsh/plugins
   ln -s -T $DOTFILES_DIR/zsh/zshrc $DEST_DIR/.zsh/zshrc
   ln -s -T $DOTFILES_DIR/zsh/zsh_aliases $DEST_DIR/.zsh/zsh_aliases
-  ln -s -T $DOTFILES_DIR/zsh/zlogout $DEST_DIR/.zlogout
 
   ## vim
   ln -s -T $DOTFILES_DIR/vim/ftplugin $DEST_DIR/.vim/ftplugin
@@ -21,6 +20,16 @@ create_dots_symlinks() {
   ## Other configs
   ln -s -T $DOTFILES_DIR/configs/tmux.conf $DEST_DIR/.tmux.conf
   ln -s -T $DOTFILES_DIR/configs/gitconfig $DEST_DIR/.gitconfig
+
+  ## Install WSL-related stuff, if desired
+  if [ $WSL_INSTALL -eq 1 ]; then
+    create_dots_symlinks_wsl
+  fi
+}
+
+create_dots_symlinks_wsl() {
+  ln -s -T $DOTFILES_DIR/zsh/wsl $DEST_DIR/.zsh/wsl
+  ln -s -T $DOTFILES_DIR/zsh/zlogout $DEST_DIR/.zlogout
 }
 
 create_dots_files() {
@@ -33,5 +42,5 @@ create_dots_files() {
   fi
 
   echo "Prepending source line to .zshrc. Uncomment to source zshrc base."
-  echo "#source $DEST_DIR/.zsh/zshrc" | cat - $DEST_DIR/.zshrc | tee $DEST_DIR/.zshrc
+  echo -e "#source $DEST_DIR/.zsh/zshrc\n\n#source $DEST_DIR/.zsh/wsl" | cat - $DEST_DIR/.zshrc | tee $DEST_DIR/.zshrc
 }

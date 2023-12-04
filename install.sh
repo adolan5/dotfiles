@@ -1,6 +1,7 @@
 #!/bin/bash
 DOTFILES_DIR=$(readlink -f $(dirname -- "${BASH_SOURCE[0]}"))
 DEST_DIR=$HOME
+WSL_INSTALL=0
 
 source $DOTFILES_DIR/scripts/install/install_dotfiles.sh
 
@@ -8,10 +9,13 @@ usage() {
   echo "Usage: bash install.sh [-d <dest_dir>]"
 }
 
-while getopts "d:h" arg; do
+while getopts "d:hw" arg; do
   case $arg in
     d)
       DEST_DIR="$OPTARG"
+      ;;
+    w)
+      WSL_INSTALL=1
       ;;
     h)
       usage
