@@ -18,7 +18,7 @@ augroup MyColors
   autocmd ColorScheme * call HiColors()
 augroup END
 
-colorscheme elflord
+colorscheme industry
 
 " ''' Plugins '''
 " Use Pathogen for runtime management, if available (for Vim version < 8)
