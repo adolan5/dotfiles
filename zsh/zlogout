@@ -1,0 +1,5 @@
+# WSL kill ssh-agent if running on last exit
+if [ 1 -eq $(pgrep -c zsh) ] && [ ! -z "$SSH_AGENT_PID" ]
+then
+  eval $(ssh-agent -k)
+fi

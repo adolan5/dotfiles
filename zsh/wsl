@@ -33,3 +33,13 @@ vboxpause() {
   echo "Machine: $MACHINE"
   powershell.exe -c start -FilePath  "\"$(wslpath -w /mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe)\"" -ArgumentList \"controlvm\",\"$MACHINE\",\"savestate\"
 }
+
+# Utilities for running ssh-agent
+# Alias to start ssh-agent and save the environment variables to a temporary file
+alias agent='eval $(ssh-agent -t 2H | tee /tmp/ssh-agent.env)'
+
+# Startup to read the environment if it exists and ssh-agent is running
+if [ -s /tmp/ssh-agent.env -a $(pgrep ssh-agent) ]
+then
+  source /tmp/ssh-agent.env
+fi

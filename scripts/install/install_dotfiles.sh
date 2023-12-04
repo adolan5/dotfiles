@@ -10,6 +10,7 @@ create_dots_symlinks() {
   ln -s -T $DOTFILES_DIR/zsh/plugins $DEST_DIR/.zsh/plugins
   ln -s -T $DOTFILES_DIR/zsh/zshrc $DEST_DIR/.zsh/zshrc
   ln -s -T $DOTFILES_DIR/zsh/zsh_aliases $DEST_DIR/.zsh/zsh_aliases
+  ln -s -T $DOTFILES_DIR/zsh/zlogout $DEST_DIR/.zlogout
 
   ## vim
   ln -s -T $DOTFILES_DIR/vim/ftplugin $DEST_DIR/.vim/ftplugin
