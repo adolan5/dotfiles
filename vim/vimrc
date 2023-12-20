@@ -11,6 +11,8 @@ function! HiColors() abort
   highlight LineNr guifg=#adadad ctermfg=gray
   " Better error color for Spelling mistakes
   highlight SpellBad cterm=bold ctermbg=1
+  highlight Normal ctermbg=None
+  highlight EndOfBuffer ctermbg=None
 endfunction
 
 augroup MyColors
