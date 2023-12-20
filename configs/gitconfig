@@ -17,3 +17,5 @@
   tig = log --all --decorate --oneline --graph
   # Amed previous commit
   oops = commit --amend
+[init]
+	defaultBranch = main
