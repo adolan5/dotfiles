@@ -14,6 +14,7 @@ create_dots_symlinks() {
   ## vim
   ln -s -T $DOTFILES_DIR/vim/ftplugin $DEST_DIR/.vim/ftplugin
   ln -s -T $DOTFILES_DIR/vim/plugins $DEST_DIR/.vim/pack/plugins
+  ln -s -T $DOTFILES_DIR/vim/colors $DEST_DIR/.vim/pack/colors
   ln -s -T $DOTFILES_DIR/vim/vimrc $DEST_DIR/.vimrc
   ln -s -T $DOTFILES_DIR/vim/gvimrc $DEST_DIR/.gvimrc
 
