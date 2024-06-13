@@ -20,7 +20,12 @@ augroup MyColors
   autocmd ColorScheme * call HiColors()
 augroup END
 
-colorscheme industry
+try
+  colorscheme PaperColor
+  set background=dark
+catch
+  colorscheme industry
+endtry
 
 " ''' Plugins '''
 " Use Pathogen for runtime management, if available (for Vim version < 8)
