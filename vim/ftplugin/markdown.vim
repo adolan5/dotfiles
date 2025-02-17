@@ -3,6 +3,7 @@ setlocal nonumber norelativenumber
 setlocal spell
 setlocal cc=+1
 setlocal nojoinspaces
+setlocal conceallevel=2
 
 " Syntax highlighting for fenced code blocks
 let g:markdown_fenced_languages=["sh", "conf", "yaml", "dockerfile"]
