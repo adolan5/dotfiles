@@ -123,4 +123,11 @@ source /usr/share/doc/fzf/examples/completion.zsh
 # Alternative for completion if not yet included in package (manual download)
 # source /home/adolan/.fzf/completion.zsh
 
+# enable auto-suggestions based on the history
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  # change suggestion color
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
+fi
+
 ### End adolan defaults ###
