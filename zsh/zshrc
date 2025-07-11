@@ -127,7 +127,9 @@ source /usr/share/doc/fzf/examples/completion.zsh
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   # change suggestion color
-  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8,underline'
+  # Complete suggestions with ctrl+space
+  bindkey '^ ' autosuggest-accept
 fi
 
 ### End adolan defaults ###
