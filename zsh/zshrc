@@ -117,9 +117,14 @@ bindkey '^U' backward-kill-line
 bindkey '^Y' vi-put-after
 bindkey '^[[Z' reverse-menu-complete
 
-# Configure fzf for completion
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+# Configure fzf for completion (distro aware-ish)
+FZF_COMP_PATH=/usr/share/doc/fzf/examples
+if [ ! -d $FZF_COMP_PATH ]; then
+  FZF_COMP_PATH=/usr/share/fzf
+fi
+source $FZF_COMP_PATH/key-bindings.zsh
+source $FZF_COMP_PATH/completion.zsh
+unset FZF_COMP_PATH
 # Alternative for completion if not yet included in package (manual download)
 # source /home/adolan/.fzf/completion.zsh
 
