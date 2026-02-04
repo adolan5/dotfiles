@@ -2,20 +2,39 @@
 DOTFILES_DIR=$(readlink -f $(dirname -- "${BASH_SOURCE[0]}"))
 DEST_DIR=$HOME
 WSL_INSTALL=0
+SKIP_CONF=0
 
 source $DOTFILES_DIR/scripts/install/install_dotfiles.sh
 
 usage() {
-  echo "Usage: bash install.sh [-d <dest_dir>]"
+  echo "Usage: bash install.sh [-d <dest_dir>] [-y] [-w] [-h]"
 }
 
-while getopts "d:hw" arg; do
+prompt_user() {
+  echo "Dots dir is $DOTFILES_DIR"
+  read -p "This script will install configurations into $DEST_DIR - continue? (y/[n]): " yn
+  case $yn in
+    y)
+      echo "Continuing..."
+      ;;
+    *)
+      echo "Exiting."
+      usage
+      exit 1
+      ;;
+  esac
+}
+
+while getopts "d:wyh" arg; do
   case $arg in
     d)
       DEST_DIR="$OPTARG"
       ;;
     w)
       WSL_INSTALL=1
+      ;;
+    y)
+      SKIP_CONF=1
       ;;
     h)
       usage
@@ -25,18 +44,9 @@ while getopts "d:hw" arg; do
 done
 shift $(($OPTIND - 1))
 
-echo "Dots dir is $DOTFILES_DIR"
-read -p "This script will install configurations into $DEST_DIR - continue? (y/[n]): " yn
-case $yn in
-  y)
-    echo "Continuing..."
-    ;;
-  *)
-    echo "Exiting."
-    usage
-    exit 1
-    ;;
-esac
+if [ $SKIP_CONF -eq 0 ]; then
+  prompt_user
+fi
 
 # Init submodules
 pushd $DOTFILES_DIR
