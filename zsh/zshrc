@@ -129,12 +129,17 @@ unset FZF_COMP_PATH
 # source /home/adolan/.fzf/completion.zsh
 
 # enable auto-suggestions based on the history
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_SOURCE_DIR=/usr/share/zsh-autosuggestions
+if [ ! -d $ZSH_AUTOSUGGEST_SOURCE_DIR ]; then
+  ZSH_AUTOSUGGEST_SOURCE_DIR=/usr/share/zsh/plugins/zsh-autosuggestions
+fi
+if [ -f $ZSH_AUTOSUGGEST_SOURCE_DIR/zsh-autosuggestions.zsh ]; then
+  source $ZSH_AUTOSUGGEST_SOURCE_DIR/zsh-autosuggestions.zsh
   # change suggestion color
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8,underline'
   # Complete suggestions with ctrl+space
   bindkey '^ ' autosuggest-accept
 fi
+unset ZSH_AUTOSUGGEST_SOURCE_DIR
 
 ### End adolan defaults ###
